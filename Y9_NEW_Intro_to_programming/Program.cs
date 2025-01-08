@@ -34,6 +34,19 @@
             }
             Console.WriteLine("Your shipping cost is £" +shipping_cost);
         }
+        static void LibraryManagement()
+        {
+            double fine = 0.00;
+            Console.WriteLine("Enter the number of days your book is overdue");
+            int overdue_days = int.Parse(Console.ReadLine());
+            if (overdue_days >= 1 && overdue_days <= 5)
+            {
+                fine = 1.00;
+            } else if (overdue_days >= )
+            {
+
+            }
+        }
         static void Main(string[] args)
         {
             ShippingCost();
