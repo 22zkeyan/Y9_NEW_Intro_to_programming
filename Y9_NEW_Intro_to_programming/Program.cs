@@ -122,7 +122,7 @@
                 bool member_stat = true;
             } else
             {
-                bool member_
+                bool member_stat = false;
             }
         }
         static void Main(string[] args)
