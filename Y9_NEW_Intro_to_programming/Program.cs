@@ -111,6 +111,7 @@
         }
         static void FoodPriceCalc()
         {
+            string discount_msg = "";
             Console.WriteLine("How many main courses have you had?");
             int main_courses = int.Parse(Console.ReadLine());
             Console.WriteLine("Howmany desserts have you had?");
@@ -124,10 +125,30 @@
             {
                 bool member_stat = false;
             }
+            if (main_courses >= 2 && member_stat == true)
+            {
+                double total_cost = ((main_courses * 15) + desserts * 5) * 0.8;
+                discount_msg = "You have received a 20% discount";
+            } else if (main_courses >= 2 && member_stat == false)
+            {
+                double total_cost = ((main_courses * 15) + desserts * 5) * 0.9;
+                discount_msg = "You have received a 10% discount";
+            }
+            if (main_courses <= 2 && member_stat == true)
+            {
+                double total_cost = ((main_courses * 15) + desserts * 5) * 0.95;
+                discount_msg = "You have received a 5% discount";
+            }
+            else if (main_courses <= 2 && member_stat == false)
+            {
+                double total_cost = (main_courses * 15) + desserts * 5;
+                discount_msg = "You have received a 10% discount";
+            }
+            Console.WriteLine("Your total is $" + total_cost + ". " +discount_msg);
         }
         static void Main(string[] args)
         {
-            Astronauts();
+            FoodPriceCalc();
         }
     }
 }
